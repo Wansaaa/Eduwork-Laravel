@@ -1,18 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 
-Route::get('/', function () {
-    return 'Ini route utama';
-});
+Route::get('/', [HomeController::class, 'index']);
+Route::get('/cart', [HomeController::class, 'cart']);
 
 Route::get('/products', function () {
     return 'Ini ada route products';
-});
-
-Route::get('/cart', function () {
-    return 'Ini ada route cart';
 });
 
 Route::get('/checkout', function () {
